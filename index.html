@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>배움터 - 쉽고 재미있는 온라인 교육</title>
+<meta name="description" content="초보자도 쉽게 따라 하는 온라인 강의. 코딩, 디자인, 데이터 분석을 배움터에서 시작하세요.">
+<style>
+  :root { --bg:#fafaf7; --ink:#1c2230; --muted:#5b6475; --brand:#3b5bdb; --brand-d:#2f49b0; --card:#fff; --line:#e6e8ee; --accent:#ffd43b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151c; --ink:#eef0f5; --muted:#9aa3b5; --brand:#7c93ff; --brand-d:#9aabff; --card:#1b2030; --line:#2a3043; }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Pretendard","Malgun Gothic",system-ui,sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  header { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 800; font-size: 1.2rem; }
+  .logo span { color: var(--brand); }
+  nav a.link { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: .95rem; }
+  nav a.link:hover { color: var(--ink); }
+  .btn { display: inline-block; background: var(--brand); color: #fff; padding: 12px 24px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 0; cursor: pointer; font-size: 1rem; }
+  .btn:hover { background: var(--brand-d); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .hero { padding: 80px 0 64px; text-align: center; }
+  .badge { display: inline-block; background: var(--accent); color: #1c2230; font-weight: 700; font-size: .85rem; padding: 4px 12px; border-radius: 99px; margin-bottom: 20px; }
+  h1 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.2; letter-spacing: -.02em; }
+  h1 em { font-style: normal; color: var(--brand); }
+  .hero p { color: var(--muted); font-size: 1.1rem; max-width: 560px; margin: 20px auto 32px; }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .stats div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .stats b { display: block; font-size: 1.8rem; color: var(--brand); }
+  .stats span { color: var(--muted); font-size: .9rem; }
+  section { padding: 56px 0; }
+  h2 { font-size: 1.8rem; text-align: center; margin-bottom: 8px; }
+  .sub { text-align: center; color: var(--muted); margin-bottom: 36px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; transition: transform .15s; }
+  .card:hover { transform: translateY(-4px); }
+  .card .ico { font-size: 2rem; }
+  .card h3 { margin: 10px 0 6px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .tag { display: inline-block; margin-top: 12px; font-size: .8rem; color: var(--brand); font-weight: 700; }
+  .why li { list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+  .why li b { color: var(--brand); }
+  .signup { background: var(--brand); color: #fff; border-radius: 20px; padding: 48px 24px; text-align: center; }
+  .signup p { opacity: .9; margin: 8px 0 24px; }
+  form { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  input { padding: 12px 16px; border-radius: 10px; border: 0; min-width: 240px; font-size: 1rem; }
+  .signup .btn { background: var(--accent); color: #1c2230; }
+  #msg { margin-top: 14px; min-height: 1.4em; font-weight: 700; }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 32px 0 48px; }
+  @media (max-width: 560px) { nav a.link { display: none; } .stats { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">배움<span>터</span></div>
+      <div>
+        <a class="link" href="#courses">강좌</a>
+        <a class="link" href="#why">특징</a>
+        <a class="link" href="#signup">신청</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="badge">🎉 첫 달 무료 체험</span>
+    <h1>처음이어도 괜찮아요,<br><em>하루 20분</em>으로 시작하는 배움</h1>
+    <p>코딩, 디자인, 데이터 분석까지. 쉬운 설명과 따라 하기 실습으로 누구나 끝까지 완주할 수 있어요.</p>
+    <div class="cta">
+      <a class="btn" href="#signup">무료로 시작하기</a>
+      <a class="btn ghost" href="#courses">강좌 둘러보기</a>
+    </div>
+    <div class="stats">
+      <div><b>12,000+</b><span>누적 수강생</span></div>
+      <div><b>4.9 / 5</b><span>평균 만족도</span></div>
+      <div><b>80+</b><span>실습형 강좌</span></div>
+    </div>
+  </div>
+
+  <section id="courses">
+    <div class="wrap">
+      <h2>인기 강좌</h2>
+      <p class="sub">입문자가 가장 많이 선택한 강좌예요</p>
+      <div class="grid">
+        <div class="card"><div class="ico">💻</div><h3>코딩 첫걸음</h3><p>HTML부터 웹사이트 배포까지 4주 만에 내 사이트를 만들어요.</p><span class="tag">입문 · 4주</span></div>
+        <div class="card"><div class="ico">🎨</div><h3>디자인 기초</h3><p>색, 글꼴, 레이아웃의 원리를 익히고 포트폴리오를 완성해요.</p><span class="tag">입문 · 3주</span></div>
+        <div class="card"><div class="ico">📊</div><h3>엑셀 데이터 분석</h3><p>복잡한 데이터를 한눈에 보는 차트와 보고서로 바꿔 봐요.</p><span class="tag">초중급 · 5주</span></div>
+        <div class="card"><div class="ico">🤖</div><h3>AI 활용 업무 비법</h3><p>AI 도구로 문서·기획·분석 업무 시간을 절반으로 줄여요.</p><span class="tag">입문 · 2주</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap" style="max-width:720px">
+      <h2>배움터가 다른 이유</h2>
+      <p class="sub">끝까지 해낼 수 있도록 설계했어요</p>
+      <ul class="why">
+        <li><b>쉬운 설명</b> · 전문 용어 없이 일상 비유로 풀어 드려요.</li>
+        <li><b>따라 하는 실습</b> · 영상만 보지 않고 직접 만들며 배워요.</li>
+        <li><b>1:1 질문 답변</b> · 막히면 24시간 안에 멘토가 답해 드려요.</li>
+        <li><b>수료증 발급</b> · 완주하면 공유 가능한 수료증을 드려요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="signup">
+    <div class="wrap">
+      <div class="signup">
+        <h2>지금 무료 체험을 신청하세요</h2>
+        <p>이메일을 남기면 시작 안내를 보내 드려요.</p>
+        <form id="f">
+          <input type="email" id="email" placeholder="이메일 주소" required>
+          <button class="btn" type="submit">신청하기</button>
+        </form>
+        <div id="msg" role="status"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 배움터 · 데모용 랜딩페이지입니다</footer>
+
+<script>
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('msg').textContent = '✅ 신청 완료! (데모 페이지라 실제 저장은 되지 않아요)';
+    this.reset();
+  });
+</script>
+</body>
+</html>
